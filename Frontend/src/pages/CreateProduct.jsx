@@ -134,7 +134,7 @@ const handleSaveProduct = async () => {
                 id="priceInCents"
                 type="number"
                 value={priceIncents}
-                onChange={(e) => setPriceInCents(e.target.value)}
+                onChange={(e) => setPriceIncents(e.target.value)}
                 className='border border-base-300 px-4 py-2 w-full rounded-md'    
             />
 
