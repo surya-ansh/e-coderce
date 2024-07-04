@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner';
 const EditProduct = () => {
 
     const [name, setName] = useState('');
-    const [priceIncents, setpriceIncents] = useState('');
+    const [priceInCents, setpriceInCents] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(false);
@@ -32,7 +32,7 @@ const EditProduct = () => {
             .get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/product/${id}`)
             .then((response) => {
                 setName(response.data.name);
-                setpriceIncents(response.data.priceIncents);
+                setpriceInCents(response.data.priceInCents);
                 setDescription(response.data.description);
                 setCategory(response.data.category);
                 setLoading(false);
@@ -46,7 +46,7 @@ const EditProduct = () => {
 
 
     const handleEditProduct = () => {
-        const data = { name, priceIncents,description, category };
+        const data = { name, priceInCents,description, category };
         setLoading(true);
         axios
             .put(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/product/${id}`, data, config)
@@ -79,14 +79,14 @@ const EditProduct = () => {
                     className='border border-base-300 px-4 py-2 w-full rounded-md'    
                 />
 
-                <label htmlFor="priceIncents" className='block text-md  mb-2'>
+                <label htmlFor="priceInCents" className='block text-md  mb-2'>
                     Price in cents
                 </label>
                 <input 
-                    id="priceIncents"
+                    id="priceInCents"
                     type="number"
-                    value={priceIncents}
-                    onChange={(e) => setpriceIncents(e.target.value)}
+                    value={priceInCents}
+                    onChange={(e) => setpriceInCents(e.target.value)}
                     className='border border-base-300 px-4 py-2 w-full rounded-md'    
                 />
 

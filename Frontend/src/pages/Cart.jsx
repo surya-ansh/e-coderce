@@ -14,7 +14,7 @@ const Cart = () => {
     }
 
 
-    const totalPrice = cartItems.reduce((acc, item) => acc + item.priceIncents * item.quantity, 0);
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.priceInCents * item.quantity, 0);
 
 
 
@@ -24,7 +24,7 @@ const Cart = () => {
 
         const transformedItems = cartItems.map(item => ({
             name: item.name,
-            priceIncents: item.priceIncents,
+            priceInCents: item.priceInCents,
             quantity: item.quantity,
             image: item.image
         }));
@@ -56,7 +56,7 @@ const Cart = () => {
                     <div key={index} className='bg-base-200 rounded-lg shadow-lg p-4 flex flex-col'>
                         <img src={item.image} alt={item.name} className='rounded-md mb-4 w-full h-64 object-cover' />
                         <h2 className='text-lg font-bold mb-2'>{item.name}</h2>
-                        <p className='text-md mb-1'>Price: ${(item.priceIncents / 100).toFixed(2)}</p>
+                        <p className='text-md mb-1'>Price: ${(item.priceInCents / 100).toFixed(2)}</p>
                         <div className='flex items-center justify-between text-md mb-3'>
                             <p>Quantity: {item.quantity}</p>
                             <div className='flex items-center'>

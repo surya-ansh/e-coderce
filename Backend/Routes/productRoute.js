@@ -9,7 +9,7 @@ router.post('/', auth, async (request, response) => {
     try {
         if (
             !request.body.name ||
-            !request.body.priceIncents ||
+            !request.body.priceInents ||
             !request.body.image ||
             !request.body.category
         ) {
@@ -20,7 +20,7 @@ router.post('/', auth, async (request, response) => {
 
         const newProduct = {
             name: request.body.name,
-            priceIncents: request.body.priceIncents,
+            priceInCents: request.body.priceInCents,
             description: request.body.description,
             image: request.body.image,
             category: request.body.category
