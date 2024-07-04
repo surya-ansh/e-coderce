@@ -9,7 +9,7 @@ router.post('/', auth, async (request, response) => {
     try {
         if (
             !request.body.name ||
-            !request.body.priceInents ||
+            !request.body.priceInCents ||
             !request.body.image ||
             !request.body.category
         ) {
