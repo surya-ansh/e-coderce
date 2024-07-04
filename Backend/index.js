@@ -5,9 +5,9 @@ import cors from "cors"
 import { v2 as cloudinary } from "cloudinary"
 import multer from "multer"
 import { CloudinaryStorage } from "multer-storage-cloudinary"
-import productRoute from "./routes/productRoute.js"
-import stripeRoute from "./routes/stripeRoute.js"
-import subscriberRoute from "./routes/subscriberRoute.js"
+import productRoute from "./Routes/productRoute.js"
+import stripeRoute from "./Routes/stripeRoute.js"
+import subscriberRoute from "./Routes/subscriberRoute.js"
 import { authRouter } from "./controllers/authController.js";
 
 
