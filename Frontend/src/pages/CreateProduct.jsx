@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner';
 const CreateProduct = () => {
 
 const [name, setName] = useState('');
-const [priceInCents, setPriceInCents] = useState('');
+const [priceIncents, setPriceIncents] = useState('');
 const [category, setCategory] = useState('');
 const [description, setDescription] = useState('');
 const [img, setImg] = useState(null);
@@ -70,12 +70,12 @@ const uploadFile = async () => {
 
 
 const handleSaveProduct = async () => {
-    if (!name || !priceInCents || !category) {
+    if (!name || !priceIncents || !category) {
         enqueueSnackbar('Please fill all required fields', { variant: 'warning' });
         return;
     }
 
-    const price = parseInt(priceInCents);
+    const price = parseInt(priceIncents);
     if (isNaN(price) || price <= 0) {
         enqueueSnackbar('Price must be a positive number', { variant: 'warning' });
         return;
@@ -91,7 +91,7 @@ const handleSaveProduct = async () => {
 
         const formData = {
             name,
-            priceInCents,
+            priceIncents,
             description,
             image: uploadedImageUrl,
             category
@@ -133,7 +133,7 @@ const handleSaveProduct = async () => {
             <input 
                 id="priceInCents"
                 type="number"
-                value={priceInCents}
+                value={priceIncents}
                 onChange={(e) => setPriceInCents(e.target.value)}
                 className='border border-base-300 px-4 py-2 w-full rounded-md'    
             />
